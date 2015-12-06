@@ -1,0 +1,19 @@
+{
+  "name": "node-magento2-swagger",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-release": "^0.13.0",
+    "grunt-swagger-js-codegen": "^0.4.4",
+    "load-grunt-config": "^0.19.1",
+    "time-grunt": "^1.2.2"
+  },
+  "dependencies": {}
+}
