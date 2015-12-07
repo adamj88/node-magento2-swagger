@@ -1,0 +1,16 @@
+prepublish:
+  - codegen
+  - lint
+  - document
+  - release
+
+codegen:
+  - swagger-js-codegen
+
+document:
+  - release
+
+lint:
+  - jsonlint
+  - jshint
+  - coffeelint
