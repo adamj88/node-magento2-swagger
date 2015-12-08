@@ -8,7 +8,7 @@ codegen:
   - swagger-js-codegen
 
 document:
-  - release
+  - yuidoc
 
 lint:
   - jsonlint
