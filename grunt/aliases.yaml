@@ -2,7 +2,6 @@ prepublish:
   - codegen
   - lint
   - document
-  - release
 
 codegen:
   - swagger-js-codegen
