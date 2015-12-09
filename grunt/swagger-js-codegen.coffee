@@ -4,14 +4,14 @@ module.exports =
     options:
       apis: [
         swagger: '<%= package.config.swagger %>'
-        className: 'magento'
+        className: 'Magento'
         mustache:
-          className: 'magento' # This is the model name - it should be repeated here if you want to use it in mustache templates
-          # customParam: 'foo'  # some custom param used in mustache templates
+          className: 'Magento'
+          # customParam: 'foo'
         template:
           class: './templates/class.mustache',
           method: './templates/method.mustache',
           request: './templates/request.mustache'
-        custom : true
+        custom: true
       ]
       dest: 'lib'
