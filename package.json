@@ -1,9 +1,13 @@
 {
   "name": "magento2-swagger",
   "version": "0.0.7",
-  "author": "",
-  "description": "",
-  "license": "ISC",
+  "author": "Adam Johnson",
+  "description": "Magento 2 REST API - code generated from official Swagger spec",
+  "homepage": "https://github.com/adamj88/node-magento2-swagger#readme",
+  "keywords": [
+    "magento 2",
+    "rest"
+  ],
   "main": "lib/magento.js",
   "config": {
     "swagger": "http://devdocs.magento.com/swagger/schemas/latest.json"
@@ -11,6 +15,14 @@
   "scripts": {
     "prepublish": "grunt prepublish",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamj88/node-magento2-swagger.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adamj88/node-magento2-swagger/issues"
   },
   "dependencies": {},
   "devDependencies": {
