@@ -1,6 +1,6 @@
 {
   "name": "magento2-swagger",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "author": "Adam Johnson",
   "description": "Magento 2 REST API - code generated from official Swagger spec",
   "homepage": "https://github.com/adamj88/node-magento2-swagger#readme",
