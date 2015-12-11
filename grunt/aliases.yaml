@@ -13,3 +13,7 @@ lint:
   - jsonlint
   - jshint
   - coffeelint
+
+test:
+  - codegen
+  - lint
