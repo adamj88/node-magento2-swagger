@@ -1,0 +1,52 @@
+var _       = require('underscore'),
+  app     = require('express')(),
+  server  = require('http').Server(app),
+  io      = require('socket.io')(server),
+  exphbs  = require('express-handlebars'),
+  helpers = require('./lib/helpers'),
+  magentoSwagger = require('magento2-swagger').Magento;
+
+// Handlebars renderer - uses node module: https://github.com/ericf/express-handlebars
+var hbs = exphbs.create({
+  defaultLayout: 'default',
+  extname: '.hbs',
+  helpers: helpers,
+  layoutsDir: 'views/layouts/',
+  partialsDir: 'views/partials/'
+});
+
+var magento = new magentoSwagger('http://magento2.local/rest');
+
+// Set app options: http://expressjs.com/4x/api.html#app.set
+app.set('etag', 'strong');
+app.set('view engine', '.hbs');
+// Set custom variables: http://expressjs.com/4x/api.html#app.set
+// app.set('title', 'My Site');
+
+// Set Handlebars (.hbs) as rendering engine: http://expressjs.com/4x/api.html#app.engine
+app.engine('.hbs', hbs.engine);
+
+{{#each paths}}
+app
+  {{#each methods}}.{{method}}('{{path}}', function(req, res) {
+    {{#if spec.description}}// {{spec.description}}{{/if}}
+    magento.{{spec.operationId}}(req.params).done(function (data) {
+      res.json(data);
+    });
+  })
+  {{/each}}
+;
+
+{{/each}}
+
+server.listen(3000);
+
+io.on('connection', function (socket) {
+
+  console.log('Connected with ID:' + socket.id);
+
+  socket.on('disconnect', function () {
+    console.log('Disconnected with ID:' + this.id);
+  });
+
+});
